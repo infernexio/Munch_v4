@@ -5,7 +5,7 @@ import 'package:munch_v4/controllers/ingredients_controller.dart';
 import 'package:munch_v4/pages/home/main_food_page.dart';
 import 'package:munch_v4/pages/home/scanner_page.dart';
 import 'package:munch_v4/pages/home/settings_page.dart';
-import 'package:munch_v4/pages/ingredients/ingredients_page.dart';
+import 'package:munch_v4/pages/home/ingredients_page.dart';
 import '../../res/colors.dart';
 
 class HomePage extends StatefulWidget {

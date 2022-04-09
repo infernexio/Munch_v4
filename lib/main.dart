@@ -6,7 +6,7 @@ import 'package:munch_v4/pages/food/popular_food_details.dart';
 import 'package:munch_v4/pages/home/food_page_body.dart';
 import 'package:munch_v4/pages/home/home_page.dart';
 import 'package:munch_v4/pages/home/main_food_page.dart';
-import 'package:munch_v4/pages/ingredients/ingredients_page.dart';
+import 'package:munch_v4/pages/home/ingredients_page.dart';
 import 'package:munch_v4/pages/welcome_page.dart';
 import 'package:get/get.dart';
 import 'package:munch_v4/helper/dependencies.dart' as dep;

@@ -32,11 +32,16 @@ class IngredientsPage extends StatelessWidget {
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(
-                    icon: Icons.arrow_back_ios,
-                    iconColor: Colors.white,
-                    backgroundColor: AppColors.mainColor,
-                    iconSize: Dimensions.iconsize24,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: AppIcon(
+                      icon: Icons.arrow_back_ios,
+                      iconColor: Colors.white,
+                      backgroundColor: AppColors.mainColor,
+                      iconSize: Dimensions.iconsize24,
+                    ),
                   ),
                   SizedBox(
                     width: Dimensions.width20 * 5,

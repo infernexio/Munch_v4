@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:munch_v4/controllers/popular_product_controller.dart';
 import 'package:munch_v4/controllers/recommended_product_controller.dart';
 import 'package:munch_v4/pages/home/home_page.dart';
-import 'package:munch_v4/pages/ingredients/ingredients_page.dart';
+import 'package:munch_v4/pages/home/ingredients_page.dart';
 import 'package:munch_v4/res/colors.dart';
 import 'package:munch_v4/res/dimensions.dart';
 import 'package:munch_v4/widget/app_icon.dart';
@@ -41,7 +41,7 @@ class MunchalongFoodDetails extends StatelessWidget {
                     // }else{
                     //   Get.toNamed(RouteHelper.initial);
                     // }
-                    Get.to(HomePage());
+                    Navigator.of(context).pop();
                     },
                   child: AppIcon(icon: Icons.clear),
                 ),

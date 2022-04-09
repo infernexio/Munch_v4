@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:munch_v4/controllers/ingredients_controller.dart';
+import 'package:munch_v4/pages/food/recipe_details.dart';
 import 'package:munch_v4/pages/home/home_page.dart';
 import 'package:munch_v4/pages/home/main_food_page.dart';
-import 'package:munch_v4/pages/ingredients/ingredients_page.dart';
+import 'package:munch_v4/pages/home/ingredients_page.dart';
 import 'package:munch_v4/res/dimensions.dart';
 import 'package:munch_v4/routes/route_helper.dart';
 import 'package:munch_v4/widget/app_icon.dart';
@@ -197,7 +198,7 @@ class PopularFoodDetails extends StatelessWidget {
                 //Price to add to cart button
                   GestureDetector(
                     onTap: () {
-                      
+                      Get.to(RecipeDetails());
                     },
                     child: Container(
                       width: Dimensions.width45*5,

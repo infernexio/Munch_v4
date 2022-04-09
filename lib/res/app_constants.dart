@@ -2,7 +2,7 @@ class AppConstants{
   static const String AppName = "Munch";
   static const int AppVersion = 4;
 
-  static const String baseUrl = "http://192.168.1.17:8080/";
+  static const String baseUrl = "http://86ae-216-226-104-11.ngrok.io/";
   static const String popularUrl = "popularData.Json";
   static const String recommendedUrl = "recommendedData.Json";
   static const String uploadsUrl = "uploads/";

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:munch_v4/pages/food/popular_food_details.dart';
 import 'package:munch_v4/pages/home/main_food_page.dart';
-import 'package:munch_v4/pages/ingredients/ingredients_page.dart';
+import 'package:munch_v4/pages/home/ingredients_page.dart';
 
 import '../pages/food/munchalog_food_details.dart';
 import '../pages/home/home_page.dart';
