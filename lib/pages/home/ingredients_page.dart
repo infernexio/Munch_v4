@@ -77,7 +77,7 @@ class IngredientsPage extends StatelessWidget {
               child: GetBuilder<IngredientsController>(
                   builder: (ingredientsController) {
                 var ingredientsList = ingredientsController.getItems;
-                return ListView.builder(
+                return ingredientsList.length != 0 ? ListView.builder(
                     itemCount: ingredientsList.length,
                     itemBuilder: (_, index) {
                       return Container(
@@ -206,7 +206,7 @@ class IngredientsPage extends StatelessWidget {
                           ],
                         ),
                       );
-                    });
+                    }):Image.asset("assets/image/empty_cart.png");
               }),
             ),
           )
