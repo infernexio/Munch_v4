@@ -61,26 +61,26 @@ class PopularProductController extends GetxController {
     }
   }
 
-  void initProduct(ProductModel product,IngredientsController ingredients) {
+  void initProduct(ProductModel product, IngredientsController ingredients) {
     _quantity = 0;
     _ingredientsQuantity = 0;
     _ingredients = ingredients;
     var exists = false;
     exists = _ingredients.exitsInIngredients(product);
     print("exits or not" + exists.toString());
-    if(exists){
+    if (exists) {
       _ingredientsQuantity = _ingredients.getQuantity(product);
     }
     print("the quantity in the cart is " + _ingredientsQuantity.toString());
   }
 
   void addItem(ProductModel product) {
-    // in the vedio it was just _quantity > 0 
+    // in the vedio it was just _quantity > 0
     if (_quantity + _ingredientsQuantity >= 0) {
       _ingredients.addItem(product, quantity);
       _quantity = 0;
       _ingredientsQuantity = _ingredients.getQuantity(product);
-    }else {
+    } else {
       Get.snackbar(
         "Item count",
         "You should add items to the cart",
@@ -91,11 +91,11 @@ class PopularProductController extends GetxController {
     update();
   }
 
-  int get totalItems{
+  int get totalItems {
     return _ingredients.totalItems;
   }
 
-  List<IngredientsModel> get getItems{
+  List<IngredientsModel> get getItems {
     return _ingredients.getItems;
   }
 }

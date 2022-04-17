@@ -1,10 +1,13 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:munch_v4/res/app_constants.dart';
 import 'package:munch_v4/res/dimensions.dart';
 import 'package:munch_v4/widget/app_large_text.dart';
-
 
 import '../../res/colors.dart';
 
@@ -22,24 +25,29 @@ class _ScannerPageState extends State<ScannerPage> {
     return Container(
       margin: EdgeInsets.only(
           top: Dimensions.height45 * 10, left: Dimensions.width45 * 2.5),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.mainColor,
-                    onPrimary: Colors.black,
-                  ),
-                  icon: Icon(Icons.camera_alt_outlined),
-                  onPressed: scanBarcode,
-                  label: AppLargeText(
-                    text: "Start Scan",
-                    color: Colors.black,
-                  )),
-              AppLargeText(
-                  text: Result == null ? 'nothing scaned yet' : 'Scan Result : ${Result}',color: Colors.black,size: 10,),
-            ]),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.mainColor,
+                  onPrimary: Colors.black,
+                ),
+                icon: Icon(Icons.camera_alt_outlined),
+                onPressed: scanBarcode,
+                label: AppLargeText(
+                  text: "Start Scan",
+                  color: Colors.black,
+                )),
+            AppLargeText(
+              text: Result == null
+                  ? 'nothing scaned yet'
+                  : 'Scan Result : ${Result}',
+              color: Colors.black,
+              size: 10,
+            ),
+          ]),
     );
   }
 
@@ -51,9 +59,32 @@ class _ScannerPageState extends State<ScannerPage> {
     } on PlatformException {
       scanResult = "Failed to get the barcode number";
     }
-    if(scanResult == null && mounted)
-    return;
+    if (scanResult == null && mounted) return;
 
     setState(() => this.Result = scanResult);
+
+    sendData(scanResult);
+  }
+
+  Future sendData(String num) async {
+    final response = await http.post(
+      Uri.parse(AppConstants.baseUrl + AppConstants.uploadsUrl + "barcode.Json"),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'barcode': '$num',
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      // If the server did return a 201 CREATED response,
+      // then parse the JSON.
+      print("made a new directory of barcode.txt");
+    } else {
+      // If the server did not return a 201 CREATED response,
+      // then throw an exception.
+      throw Exception('Failed to create album.');
+  }
   }
 }
