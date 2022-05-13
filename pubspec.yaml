@@ -33,6 +33,9 @@ dependencies:
   dots_indicator: ^2.0.0
   shared_preferences: ^2.0.13
   flutter_barcode_scanner: ^2.0.0
+  starflut: ^1.0.0
+  path: ^1.8.0
+
 
 #persistent_bottom_nav_bar: ^4.0.2 - nav bar idea play around with it later
 
@@ -44,6 +47,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^0.13.4
+  sqflite: ^2.0.2+1
 
 dev_dependencies:
   flutter_test:
