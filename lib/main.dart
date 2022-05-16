@@ -12,8 +12,9 @@ import 'package:get/get.dart';
 import 'package:munch_v4/helper/dependencies.dart' as dep;
 import 'package:munch_v4/res/app_constants.dart';
 import 'package:munch_v4/routes/route_helper.dart';
-
 import 'controllers/recommended_product_controller.dart';
+import 'helper/databaseHandler.dart';
+import 'models/ingredients.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

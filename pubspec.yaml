@@ -33,7 +33,6 @@ dependencies:
   dots_indicator: ^2.0.0
   shared_preferences: ^2.0.13
   flutter_barcode_scanner: ^2.0.0
-  starflut: ^1.0.0
   path: ^1.8.0
 
 
