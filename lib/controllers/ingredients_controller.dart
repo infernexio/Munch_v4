@@ -64,7 +64,7 @@ class IngredientsController extends GetxController {
         );
       }
     }
-    ingredientsRepo.addToCart(getItems);
+    //ingredientsRepo.addToCart(getItems);
     update();
   }
 
@@ -97,7 +97,7 @@ class IngredientsController extends GetxController {
   }
 
   List<IngredientsModel> getCartData(){
-    setCart = ingredientsRepo.getCartList();
+    //setCart = ingredientsRepo.getCartList();
 
     return storageItems;
   }

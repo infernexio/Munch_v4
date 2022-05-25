@@ -128,7 +128,7 @@ class MunchalongFoodDetails extends StatelessWidget {
         ],
       ),
       bottomNavigationBar:
-          GetBuilder<PopularProductController>(builder: (controller) {
+        GetBuilder<PopularProductController>(builder: (controller) {
         return Column(mainAxisSize: MainAxisSize.min, children: [
           Container(
             padding: EdgeInsets.only(

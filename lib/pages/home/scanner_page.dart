@@ -6,10 +6,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:munch_v4/controllers/Ingredients_product_controller.dart';
 import 'package:munch_v4/res/app_constants.dart';
 import 'package:munch_v4/res/dimensions.dart';
 import 'package:munch_v4/widget/app_large_text.dart';
 
+import '../../controllers/popular_product_controller.dart';
 import '../../helper/databaseHandler.dart';
 import '../../models/ingredients.dart';
 import '../../res/colors.dart';
@@ -79,7 +81,8 @@ class _ScannerPageState extends State<ScannerPage> {
       );
     } else {
       return Scaffold(
-          body: FutureBuilder(
+          body: GetBuilder<IngredientsProductController>(builder: (controller) { 
+          return FutureBuilder(
               future: this.handler.retrieveUsers(),
               builder: (BuildContext context,
                   AsyncSnapshot<List<Ingredients>> snapshot) {
@@ -116,6 +119,7 @@ class _ScannerPageState extends State<ScannerPage> {
                       ElevatedButton(
                         child: const Text("Add to cart"),
                         onPressed: () {
+                          controller.addItem(snapshot.data![index]);
                           setState(() => Result = null);
                           Navigator.of(
                             context,
@@ -136,7 +140,7 @@ class _ScannerPageState extends State<ScannerPage> {
                 } else {
                   return const Center(child: CircularProgressIndicator());
                 }
-              }));
+              });}));
     }
   }
 

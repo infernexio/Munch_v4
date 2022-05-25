@@ -5,13 +5,14 @@ import 'package:munch_v4/res/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../models/IngredientsModel.dart';
+import '../../models/ingredients.dart';
 
 class IngredientsRepo {
   final SharedPreferences sharedPreferences;
   IngredientsRepo({required this.sharedPreferences});
 
   List<String> cart = [];
-  void addToCart(List<IngredientsModel> ingredientsList) {
+  void addToCart(List<Ingredients> ingredientsList) {
     cart = [];
     ingredientsList.forEach((element) {
       return cart.add(jsonEncode(element));
@@ -23,9 +24,9 @@ class IngredientsRepo {
     getCartList();
   }
 
-  List<IngredientsModel> getCartList(){
+  List<Ingredients> getCartList(){
     List<String> lists = [];
-    List<IngredientsModel>  ingredientsList = [];
+    List<Ingredients>  ingredientsList = [];
 
     if(sharedPreferences.containsKey(AppConstants.INGGREDIENTS_LIST)){
       lists = sharedPreferences.getStringList(AppConstants.INGGREDIENTS_LIST)!;
@@ -33,7 +34,7 @@ class IngredientsRepo {
     }
 
     lists.forEach((element) {
-      ingredientsList.add(IngredientsModel.fromJson(jsonDecode(element)));
+      //ingredientsList.add(IngredientsModel.fromJson(jsonDecode(element)));
     });
 
     return ingredientsList;

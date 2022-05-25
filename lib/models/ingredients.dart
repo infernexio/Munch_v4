@@ -4,13 +4,12 @@ class Ingredients {
   final int stars;
   final String img;
 
-  Ingredients(
-      { 
-      required this.id,
-      required this.name,
-      required this.stars,
-      required this.img,
-      });
+  Ingredients({
+    required this.id,
+    required this.name,
+    required this.stars,
+    required this.img,
+  });
 
   Ingredients.fromMap(Map<String, dynamic> res)
       : id = res["id"],
@@ -19,6 +18,15 @@ class Ingredients {
         img = res["img"];
 
   Map<String, Object?> toMap() {
-    return {'id':id,'name': name, 'stars': stars, 'img': img};
+    return {'id': id, 'name': name, 'stars': stars, 'img': img};
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": id,
+      "name": this.name,
+      "img": this.img,
+      "stars": this.stars,
+    };
   }
 }
