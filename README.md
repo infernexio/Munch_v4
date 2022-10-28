@@ -1,7 +1,8 @@
 
 
 # 💫 About The Project:
-This is a project that creates a app useing the Flutter frame work which is usable on: <br> android, iPhone, web, mac, and windows which uses a ingredients list and searches for recipes that use those ingredients.<br><br>Final project for:<br>Engineering Design and Development<br>
+This is a project that creates a app useing the Flutter frame work which is usable on: <br> android, iPhone, web, mac, and windows <br> 
+the app uses a ingredients list and searches for recipes that use those ingredients.<br><br>Final project for:<br>Engineering Design and Development<br>
 
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](htttps://discord.gg/sohail#3096) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/sohail382517) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Sohail Shaik ) 
